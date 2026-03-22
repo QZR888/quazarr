@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About · QuaZarR</title>
+<meta name="description" content="The story behind QuaZarR — Rowan Richard Roger Money, Mr Money. Light & Darkness From One Source.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --black: #0A0A0A;
+  --white: #F5F5F0;
+  --rose-gold: #C9A96E;
+  --grey: #888;
+  --grey-dark: #1A1A1A;
+  --grey-mid: #2A2A2A;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black); color: var(--white);
+  font-family: var(--font-body); cursor: none;
+  overflow-x: hidden; -webkit-font-smoothing: antialiased;
+}
+.cursor {
+  width: 20px; height: 20px; border: 2px solid var(--white);
+  border-radius: 50%; position: fixed; pointer-events: none;
+  z-index: 99999; mix-blend-mode: difference;
+  transition: transform 0.15s ease, width 0.2s, height 0.2s;
+  transform: translate(-50%, -50%);
+}
+.cursor.hover { width: 50px; height: 50px; background: var(--white); opacity: 0.3; }
+.reveal {
+  opacity: 0; transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-logo {
+  font-family: var(--font-body); font-weight: 700; font-size: 1.8rem; letter-spacing: 3px; color: var(--white); text-decoration: none; }
+.nav-logo span.accent { color: var(--rose-gold); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-family: var(--font-body); font-size: 0.8rem; font-weight: 500;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--grey);
+  text-decoration: none; transition: color 0.3s; position: relative;
+}
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--rose-gold); transition: width 0.3s; }
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--rose-gold); }
+.nav-links a.active::after { width: 100%; }
+.menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: none; padding: 5px; }
+.menu-toggle span { width: 24px; height: 1.5px; background: var(--white); transition: all 0.3s; }
+.menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-menu {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--black); z-index: 999;
+  flex-direction: column; justify-content: center; align-items: center; gap: 30px;
+}
+.mobile-menu.active { display: flex; }
+.mobile-menu a { font-family: var(--font-display); font-size: 3rem; color: var(--white); text-decoration: none; letter-spacing: 4px; transition: color 0.3s; }
+.mobile-menu a:hover { color: var(--rose-gold); }
+
+/* About Hero */
+.about-hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 160px 40px 80px;
+  position: relative;
+}
+.about-hero::after {
+  content: ''; position: absolute; bottom: 0; left: 10%; right: 10%;
+  height: 1px; background: linear-gradient(90deg, transparent, rgba(201,169,110,0.3), transparent);
+}
+.about-hero .eyebrow {
+  font-family: var(--font-body); font-size: 0.7rem;
+  letter-spacing: 5px;
+  color: var(--rose-gold); margin-bottom: 30px;
+}
+.about-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.4;
+  max-width: 850px;
+  color: var(--white);
+}
+.about-hero h1 em { font-style: normal; color: var(--rose-gold); }
+
+/* Marquee */
+.marquee-wrap {
+  overflow: hidden; padding: 25px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: var(--grey-dark);
+}
+.marquee-track { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+.marquee-track span {
+  font-family: var(--font-display); font-size: 0.9rem;
+  letter-spacing: 4px; text-transform: uppercase;
+  color: var(--grey); white-space: nowrap; padding: 0 30px;
+}
+.marquee-track span .dot { color: var(--rose-gold); margin: 0 15px; }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* About Content */
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 80px;
+}
+
+/* Sidebar */
+.about-sidebar {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+}
+.sidebar-section {
+  margin-bottom: 35px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.sidebar-section:last-child { border-bottom: none; }
+.sidebar-label {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+  margin-bottom: 8px;
+}
+.sidebar-value {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--white);
+  line-height: 1.6;
+}
+.sidebar-value.large {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+/* Main Body */
+.about-body h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+  margin-top: 60px;
+}
+.about-body h2:first-child { margin-top: 0; }
+.about-body p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--grey);
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+.about-body .highlight-text {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.6;
+  margin: 40px 0;
+  padding-left: 25px;
+  border-left: 2px solid var(--rose-gold);
+}
+
+/* Name Breakdown */
+.name-breakdown {
+  margin: 50px 0;
+  padding: 40px;
+  background: var(--grey-dark);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.name-breakdown h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  color: var(--rose-gold);
+}
+.name-part {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.name-part:last-child { border-bottom: none; }
+.name-letter {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--white);
+  min-width: 60px;
+  text-align: center;
+}
+.name-meaning {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--grey);
+  line-height: 1.6;
+}
+.name-meaning strong {
+  color: var(--white);
+  font-weight: 500;
+}
+
+/* Contact Section */
+.contact-section {
+  background: var(--grey-dark);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 100px 40px;
+  text-align: center;
+}
+.contact-section .section-label {
+  font-family: var(--font-body); font-size: 0.7rem;
+  letter-spacing: 5px;
+  color: var(--rose-gold); margin-bottom: 20px;
+}
+.contact-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+.contact-section p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--grey);
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+.contact-email {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--rose-gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201,169,110,0.3);
+  padding-bottom: 5px;
+  transition: border-color 0.3s;
+}
+.contact-email:hover { border-color: var(--rose-gold); }
+
+/* Footer */
+footer {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 80px 40px; text-align: center;
+}
+.footer-wordmark {
+  font-family: var(--font-body);
+  font-weight: 700; font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: 8px; color: var(--white); margin-bottom: 30px; opacity: 0.15;
+}
+.footer-links { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; }
+.footer-links a {
+  font-family: var(--font-body); font-size: 0.75rem;
+  letter-spacing: 2px; color: var(--grey); text-decoration: none; transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--rose-gold); }
+.footer-copy { font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 2px; color: rgba(255,255,255,0.2); margin-top: 20px; }
+
+@media (max-width: 900px) {
+  nav { padding: 15px 20px; }
+  .nav-links { display: none; }
+  .menu-toggle { display: flex; }
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 60px 20px;
+  }
+  .about-sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .sidebar-section { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .about-hero { padding: 140px 20px 60px; }
+  .contact-section { padding: 70px 20px; }
+}
+@media (max-width: 550px) {
+  .about-sidebar { grid-template-columns: 1fr; }
+  .name-part { flex-direction: column; gap: 5px; }
+  .name-letter { min-width: auto; text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Qua<span class="accent">Z</span>arR</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="merch.html">Merch</a>
+    <a href="about.html" class="active">About</a>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="music.html">Music</a>
+  <a href="merch.html">Merch</a>
+  <a href="about.html">About</a>
+</div>
+
+<!-- About Hero -->
+<section class="about-hero">
+  <p class="eyebrow reveal">The Artist</p>
+  <h1 class="reveal" style="transition-delay:0.1s">Not just a name. A <em>frequency</em>. Where the light meets the dark — and the music lives in between.</h1>
+</section>
+
+<!-- Marquee -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>QuaZarR <span class="dot">◆</span></span>
+    <span>Mr Money <span class="dot">◆</span></span>
+    <span>Light & Darkness <span class="dot">◆</span></span>
+    <span>From One Source <span class="dot">◆</span></span>
+    <span>Rowan Richard Roger Money <span class="dot">◆</span></span>
+    <span>UK <span class="dot">◆</span></span>
+    <span>QuaZarR <span class="dot">◆</span></span>
+    <span>Mr Money <span class="dot">◆</span></span>
+    <span>Light & Darkness <span class="dot">◆</span></span>
+    <span>From One Source <span class="dot">◆</span></span>
+    <span>Rowan Richard Roger Money <span class="dot">◆</span></span>
+    <span>UK <span class="dot">◆</span></span>
+  </div>
+</div>
+
+<!-- About Content -->
+<div class="about-content">
+
+  <!-- Sidebar -->
+  <aside class="about-sidebar">
+    <div class="sidebar-section reveal">
+      <p class="sidebar-label">Name</p>
+      <p class="sidebar-value">Rowan Richard Roger Money</p>
+    </div>
+    <div class="sidebar-section reveal" style="transition-delay:0.05s">
+      <p class="sidebar-label">Alias</p>
+      <p class="sidebar-value">Mr Money</p>
+    </div>
+    <div class="sidebar-section reveal" style="transition-delay:0.1s">
+      <p class="sidebar-label">Age</p>
+      <p class="sidebar-value large">26</p>
+    </div>
+    <div class="sidebar-section reveal" style="transition-delay:0.15s">
+      <p class="sidebar-label">Based</p>
+      <p class="sidebar-value">United Kingdom</p>
+    </div>
+    <div class="sidebar-section reveal" style="transition-delay:0.2s">
+      <p class="sidebar-label">Tracks Released</p>
+      <p class="sidebar-value large">8</p>
+    </div>
+    <div class="sidebar-section reveal" style="transition-delay:0.25s">
+      <p class="sidebar-label">Platforms</p>
+      <p class="sidebar-value">Spotify<br>Apple Music<br>YouTube</p>
+    </div>
+  </aside>
+
+  <!-- Main Body -->
+  <div class="about-body">
+    <h2 class="reveal">The Story</h2>
+    <p class="reveal" style="transition-delay:0.05s">QuaZarR is the creative identity of Rowan Richard Roger Money — a UK-based rap artist building something from nothing. No label. No co-sign. No shortcuts. Just raw ambition, relentless work ethic, and a vision that doesn't fit inside anyone else's box.</p>
+    <p class="reveal" style="transition-delay:0.1s">With 8 tracks released independently across Spotify, Apple Music, and YouTube, QuaZarR's catalogue spans raw street energy to introspective depth — every bar earned, every beat intentional. This isn't music made for algorithms. It's music made from lived experience.</p>
+
+    <div class="highlight-text reveal" style="transition-delay:0.15s">
+      "Light and darkness come from a source — that source is QuaZarR. The duality of struggle and ambition, of what you come from and where you're going."
+    </div>
+
+    <h2 class="reveal">The Brand</h2>
+    <p class="reveal" style="transition-delay:0.05s">QuaZarR is more than music. It's a brand, a mindset, and a movement in the making. From merch drops to fitness protocols, from bars to business — everything funnels through the same philosophy: build it yourself, make it premium, never settle.</p>
+    <p class="reveal" style="transition-delay:0.1s">Mr Money isn't a gimmick — it's a statement of intent. The mission is clear: create an empire from the ground up, turning creative energy into real-world capital. Every track, every product, every decision is a brick in that foundation.</p>
+
+    <h2 class="reveal">The Name</h2>
+    <p class="reveal" style="transition-delay:0.05s">QuaZarR isn't random. Every letter carries weight. The name is coded with meaning — a manifesto compressed into seven characters.</p>
+
+    <div class="name-breakdown reveal" style="transition-delay:0.1s">
+      <h3>Decoding QuaZarR</h3>
+      <div class="name-part">
+        <div class="name-letter">Q</div>
+        <div class="name-meaning"><strong>Quasar</strong> — a celestial body of immense energy. The brightest objects in the universe, powered by forces most people can't even see. That's the energy behind the music.</div>
+      </div>
+      <div class="name-part">
+        <div class="name-letter">Z</div>
+        <div class="name-meaning"><strong>Zenith & Zero</strong> — the highest point and the starting line. The duality of being at the bottom and aiming for the absolute peak. Both states exist at once.</div>
+      </div>
+      <div class="name-part">
+        <div class="name-letter">RR</div>
+        <div class="name-meaning"><strong>Double R — Rowan Roger</strong> — the real name woven into the artist name. The personal made permanent. RR is the foundation everything is built on.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Contact -->
+<section class="contact-section">
+  <p class="section-label reveal">Get In Touch</p>
+  <h2 class="reveal" style="transition-delay:0.05s">Contact</h2>
+  <p class="reveal" style="transition-delay:0.1s">For bookings, collaborations, press enquiries, or business — reach out directly.</p>
+  <a href="mailto:rowanrrmoney@gmail.com" class="contact-email reveal" style="transition-delay:0.15s">rowanrrmoney@gmail.com</a>
+</section>
+
+<footer>
+  <div class="footer-wordmark">QuaZarR</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="merch.html">Merch</a>
+    <a href="about.html">About</a>
+    <a href="mailto:rowanrrmoney@gmail.com">Contact</a>
+  </div>
+  <p class="footer-copy">quazarr.online · rowanrrmoney@gmail.com</p>
+  <p class="footer-copy">© 2026 QuaZarR · Mr Money</p>
+</footer>
+
+<script>
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a, button, .name-part').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+});
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+});
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

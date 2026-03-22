@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuaZarR · Mr Money</title>
+<meta name="description" content="QuaZarR — Light & Darkness From One Source. UK rap artist, Mr Money.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #0A0A0A;
+  --white: #F5F5F0;
+  --rose-gold: #C9A96E;
+  --rose-gold-light: #D4B87A;
+  --grey: #888;
+  --grey-dark: #1A1A1A;
+  --grey-mid: #2A2A2A;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  cursor: none;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Cursor */
+.cursor {
+  width: 20px; height: 20px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease, width 0.2s, height 0.2s;
+  transform: translate(-50%, -50%);
+}
+.cursor.hover {
+  width: 50px; height: 50px;
+  background: var(--white);
+  opacity: 0.3;
+}
+
+/* Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-logo {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  color: var(--white);
+  text-decoration: none;
+}
+.nav-logo span.accent { color: var(--rose-gold); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--grey);
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1px;
+  background: var(--rose-gold);
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: var(--rose-gold); }
+.nav-links a.active::after { width: 100%; }
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: none;
+  padding: 5px;
+}
+.menu-toggle span {
+  width: 24px; height: 1.5px;
+  background: var(--white);
+  transition: all 0.3s;
+}
+.menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--black);
+  z-index: 999;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.mobile-menu.active { display: flex; }
+.mobile-menu a {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--white);
+  text-decoration: none;
+  letter-spacing: 4px;
+  transition: color 0.3s;
+}
+.mobile-menu a:hover { color: var(--rose-gold); }
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(201,169,110,0.03) 0%, transparent 60%);
+  animation: heroGlow 8s ease-in-out infinite alternate;
+}
+@keyframes heroGlow {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 6px;
+  color: var(--rose-gold);
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.1;
+  max-width: 800px;
+  margin-bottom: 50px;
+  color: var(--white);
+}
+.hero-title em {
+  font-style: normal;
+  color: var(--rose-gold);
+}
+.hero-ctas {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  cursor: none;
+}
+.btn-primary {
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--white);
+}
+.btn-primary:hover {
+  background: var(--rose-gold);
+  border-color: var(--rose-gold);
+  color: var(--black);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.btn-outline:hover {
+  border-color: var(--rose-gold);
+  color: var(--rose-gold);
+}
+
+/* Marquee */
+.marquee-wrap {
+  overflow: hidden;
+  padding: 25px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: var(--grey-dark);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.marquee-track span {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--grey);
+  white-space: nowrap;
+  padding: 0 30px;
+}
+.marquee-track span .dot {
+  color: var(--rose-gold);
+  margin: 0 15px;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Sections */
+section { padding: 100px 40px; }
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+  margin-bottom: 20px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  color: var(--white);
+}
+.section-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--grey);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* Featured Track */
+.featured-track {
+  background: var(--grey-dark);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.featured-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.track-visual {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--grey-mid), var(--black));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.track-visual::before {
+  content: '▶';
+  font-size: 3rem;
+  color: var(--rose-gold);
+  opacity: 0.6;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.track-visual:hover::before { opacity: 1; transform: scale(1.1); }
+.track-visual .track-overlay-text {
+  position: absolute;
+  bottom: 20px; left: 20px;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.3);
+}
+.track-info .track-tag {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+  margin-bottom: 15px;
+}
+.track-info h3 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.track-info p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--grey);
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+.stream-links { display: flex; gap: 15px; flex-wrap: wrap; }
+.stream-btn {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: none;
+}
+.stream-btn:hover {
+  border-color: var(--rose-gold);
+  color: var(--rose-gold);
+}
+
+/* Merch Preview */
+.merch-preview { max-width: 1200px; margin: 0 auto; }
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+.merch-card {
+  border: 1px solid rgba(255,255,255,0.06);
+  background: var(--grey-dark);
+  transition: border-color 0.3s, transform 0.3s;
+}
+.merch-card:hover {
+  border-color: var(--rose-gold);
+  transform: translateY(-5px);
+}
+.merch-card-img {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #1a1a1a, #111);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.1);
+}
+.merch-card-body { padding: 20px; }
+.merch-card-body h4 {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.merch-card-body .price {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--rose-gold);
+  letter-spacing: 1px;
+}
+
+/* Money Diet Section */
+.money-diet {
+  background: var(--grey-dark);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.money-diet-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.money-diet-visual {
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, rgba(201,169,110,0.1), var(--black));
+  border: 1px solid rgba(201,169,110,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+.money-diet-visual .book-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}
+.money-diet-visual .book-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 3px;
+  color: var(--rose-gold);
+  margin-bottom: 10px;
+}
+.money-diet-visual .book-author {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--grey);
+}
+.money-diet-text h3 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.money-diet-text p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--grey);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+.money-diet-text .diet-tag {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+  margin-bottom: 15px;
+}
+.btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
+
+/* Brand Statement */
+.brand-statement {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 120px 40px;
+}
+.brand-statement blockquote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--white);
+  margin-bottom: 30px;
+}
+.brand-statement .attribution {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 80px 40px;
+  text-align: center;
+}
+.footer-wordmark {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: 8px;
+  color: var(--white);
+  margin-bottom: 30px;
+  opacity: 0.15;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.footer-links a {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--grey);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--rose-gold); }
+.footer-copy {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.2);
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .featured-inner, .money-diet-inner { grid-template-columns: 1fr; }
+  .merch-grid { grid-template-columns: repeat(2, 1fr); }
+  nav { padding: 15px 20px; }
+  .nav-links { display: none; }
+  .menu-toggle { display: flex; }
+  section { padding: 70px 20px; }
+  .hero { padding: 100px 20px 60px; }
+}
+@media (max-width: 550px) {
+  .merch-grid { grid-template-columns: 1fr; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .btn-group { flex-direction: column; }
+  .btn-group .btn { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+
+<!-- Navigation -->
+<nav>
+  <a href="index.html" class="nav-logo">Qua<span class="accent">Z</span>arR</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="music.html">Music</a>
+    <a href="merch.html">Merch</a>
+    <a href="about.html">About</a>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="music.html">Music</a>
+  <a href="merch.html">Merch</a>
+  <a href="about.html">About</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <p class="hero-eyebrow reveal">QuaZarR · Mr Money · UK</p>
+  <h1 class="hero-title reveal" style="transition-delay:0.1s">Light <em>&</em> Darkness<br>From One Source</h1>
+  <div class="hero-ctas reveal" style="transition-delay:0.2s">
+    <a href="music.html" class="btn btn-primary">Listen Now</a>
+    <a href="merch.html" class="btn btn-outline">Shop Merch</a>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Coming For Yaaa <span class="dot">◆</span></span>
+    <span>Skets Could Never <span class="dot">◆</span></span>
+    <span>Muffin & Mimosa <span class="dot">◆</span></span>
+    <span>Into The Distance <span class="dot">◆</span></span>
+    <span>Radar <span class="dot">◆</span></span>
+    <span>Did It Matta <span class="dot">◆</span></span>
+    <span>Until I've Earnt It <span class="dot">◆</span></span>
+    <span>Monkeys & Zombies <span class="dot">◆</span></span>
+    <span>Coming For Yaaa <span class="dot">◆</span></span>
+    <span>Skets Could Never <span class="dot">◆</span></span>
+    <span>Muffin & Mimosa <span class="dot">◆</span></span>
+    <span>Into The Distance <span class="dot">◆</span></span>
+    <span>Radar <span class="dot">◆</span></span>
+    <span>Did It Matta <span class="dot">◆</span></span>
+    <span>Until I've Earnt It <span class="dot">◆</span></span>
+    <span>Monkeys & Zombies <span class="dot">◆</span></span>
+  </div>
+</div>
+
+<!-- Featured Track -->
+<section class="featured-track">
+  <div class="featured-inner">
+    <div class="track-visual reveal">
+      <span class="track-overlay-text">LATEST SINGLE</span>
+    </div>
+    <div class="track-info">
+      <p class="track-tag reveal">Latest Release</p>
+      <h3 class="reveal" style="transition-delay:0.1s">Coming For Yaaa</h3>
+      <p class="reveal" style="transition-delay:0.15s">The newest drop from QuaZarR. Raw energy, unfiltered bars, and the hunger that never stops. Stream it everywhere now.</p>
+      <div class="stream-links reveal" style="transition-delay:0.2s">
+        <a href="#" class="stream-btn">Spotify</a>
+        <a href="#" class="stream-btn">Apple Music</a>
+        <a href="#" class="stream-btn">YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee 2 -->
+<div class="marquee-wrap">
+  <div class="marquee-track" style="animation-direction: reverse;">
+    <span>Mr Money <span class="dot">◆</span></span>
+    <span>QuaZarR <span class="dot">◆</span></span>
+    <span>Light & Darkness <span class="dot">◆</span></span>
+    <span>From One Source <span class="dot">◆</span></span>
+    <span>UK Rap <span class="dot">◆</span></span>
+    <span>The Brand <span class="dot">◆</span></span>
+    <span>Mr Money <span class="dot">◆</span></span>
+    <span>QuaZarR <span class="dot">◆</span></span>
+    <span>Light & Darkness <span class="dot">◆</span></span>
+    <span>From One Source <span class="dot">◆</span></span>
+    <span>UK Rap <span class="dot">◆</span></span>
+    <span>The Brand <span class="dot">◆</span></span>
+  </div>
+</div>
+
+<!-- Merch Preview -->
+<section>
+  <div class="merch-preview">
+    <p class="section-label reveal">Merch</p>
+    <h2 class="section-title reveal" style="transition-delay:0.05s">The Collection</h2>
+    <p class="section-subtitle reveal" style="transition-delay:0.1s">First drop loading. Premium quality, limited runs.</p>
+    <div class="merch-grid">
+      <div class="merch-card reveal" style="transition-delay:0.15s">
+        <div class="merch-card-img">QZ</div>
+        <div class="merch-card-body">
+          <h4>QuaZarR Monogram Hoodie</h4>
+          <p class="price">Coming Soon · TBC</p>
+        </div>
+      </div>
+      <div class="merch-card reveal" style="transition-delay:0.2s">
+        <div class="merch-card-img">QZ</div>
+        <div class="merch-card-body">
+          <h4>QuaZarR Cap</h4>
+          <p class="price">Coming Soon · TBC</p>
+        </div>
+      </div>
+      <div class="merch-card reveal" style="transition-delay:0.25s">
+        <div class="merch-card-img">MM</div>
+        <div class="merch-card-body">
+          <h4>Mr Money Hoodie</h4>
+          <p class="price">Coming Soon · TBC</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:50px;" class="reveal" style="transition-delay:0.3s">
+      <a href="merch.html" class="btn btn-outline">View All Merch</a>
+    </div>
+  </div>
+</section>
+
+<!-- The Money Diet -->
+<section class="money-diet">
+  <div class="money-diet-inner">
+    <div class="money-diet-visual reveal">
+      <div class="book-icon">📖</div>
+      <div class="book-title">THE MONEY DIET</div>
+      <div class="book-author">By Mr Money</div>
+    </div>
+    <div class="money-diet-text">
+      <p class="diet-tag reveal">eBook · Fitness Protocol</p>
+      <h3 class="reveal" style="transition-delay:0.05s">The Money Diet</h3>
+      <p class="reveal" style="transition-delay:0.1s">The ultimate protocol to eat clean and get shredded. Built from real discipline, not shortcuts. This is the blueprint Mr Money used — now it's yours.</p>
+      <div class="btn-group reveal" style="transition-delay:0.15s">
+        <a href="https://www.amazon.co.uk/dp/B0GT9217DD" target="_blank" rel="noopener" class="btn btn-primary">Buy on Amazon</a>
+        <a href="https://rowanriches.gumroad.com/l/the-money-diet" target="_blank" rel="noopener" class="btn btn-outline">Buy on Gumroad</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Brand Statement -->
+<section class="brand-statement">
+  <blockquote class="reveal">"QuaZarR isn't just a name — it's a frequency. Where light meets dark, where ambition meets craft, where the underground meets the top floor."</blockquote>
+  <p class="attribution reveal" style="transition-delay:0.1s">— Mr Money, 2026</p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-wordmark">QuaZarR</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="merch.html">Merch</a>
+    <a href="about.html">About</a>
+    <a href="mailto:rowanrrmoney@gmail.com">Contact</a>
+  </div>
+  <p class="footer-copy">quazarr.online · rowanrrmoney@gmail.com</p>
+  <p class="footer-copy">© 2026 QuaZarR · Mr Money</p>
+</footer>
+
+<script>
+// Custom Cursor
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('a, button, .merch-card, .track-visual').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+});
+
+// Mobile Menu
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+});
+
+// Scroll Reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

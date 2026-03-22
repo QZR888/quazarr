@@ -155,10 +155,10 @@ nav {
 }
 .track-item {
   display: grid;
-  grid-template-columns: 60px 1fr auto;
+  grid-template-columns: 60px 60px 1fr auto;
   align-items: center;
-  gap: 30px;
-  padding: 35px 0;
+  gap: 20px;
+  padding: 25px 0;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   transition: all 0.3s;
 }
@@ -170,6 +170,11 @@ nav {
   border-bottom-color: rgba(201,169,110,0.2);
 }
 .track-item:hover .track-number { color: var(--rose-gold); }
+.track-cover {
+  width: 60px; height: 60px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.06);
+}
 .track-number {
   font-family: var(--font-display);
   font-size: 2rem;
@@ -261,15 +266,16 @@ footer {
 }
 @media (max-width: 650px) {
   .track-item {
-    grid-template-columns: 40px 1fr;
-    gap: 15px;
+    grid-template-columns: 50px 50px 1fr;
+    gap: 12px;
   }
+  .track-cover { width: 50px; height: 50px; }
   .track-streams {
     grid-column: 1 / -1;
     margin-top: 5px;
   }
-  .track-number { font-size: 1.4rem; }
-  .track-details h3 { font-size: 1.2rem; }
+  .track-number { font-size: 1.2rem; }
+  .track-details h3 { font-size: 1.1rem; }
 }
 </style>
 </head>
@@ -336,6 +342,7 @@ footer {
 
   <div class="track-item reveal">
     <div class="track-number">01</div>
+    <img src="img/covers-coming-for-yaaa.jpeg" alt="Coming For Yaaa cover" class="track-cover">
     <div class="track-details">
       <h3>Coming For Yaaa</h3>
       <p class="track-meta latest">Latest Release · 2025</p>
@@ -349,6 +356,7 @@ footer {
 
   <div class="track-item reveal" style="transition-delay:0.05s">
     <div class="track-number">02</div>
+    <img src="img/covers-skets-could-never.jpeg" alt="Skets Could Never cover" class="track-cover">
     <div class="track-details">
       <h3>Skets Could Never</h3>
       <p class="track-meta">Single · 2025</p>
@@ -362,6 +370,7 @@ footer {
 
   <div class="track-item reveal" style="transition-delay:0.1s">
     <div class="track-number">03</div>
+    <img src="img/covers-muffin-mimosa.jpeg" alt="Muffin & Mimosa cover" class="track-cover">
     <div class="track-details">
       <h3>Muffin & Mimosa</h3>
       <p class="track-meta">Single · 2025</p>
@@ -375,6 +384,7 @@ footer {
 
   <div class="track-item reveal" style="transition-delay:0.15s">
     <div class="track-number">04</div>
+    <img src="img/covers-into-the-distance.jpeg" alt="Into The Distance cover" class="track-cover">
     <div class="track-details">
       <h3>Into The Distance</h3>
       <p class="track-meta">Single · 2025</p>
@@ -388,6 +398,7 @@ footer {
 
   <div class="track-item reveal" style="transition-delay:0.2s">
     <div class="track-number">05</div>
+    <img src="img/covers-radar.jpeg" alt="Radar cover" class="track-cover">
     <div class="track-details">
       <h3>Radar</h3>
       <p class="track-meta">Single · 2024</p>
@@ -401,6 +412,7 @@ footer {
 
   <div class="track-item reveal" style="transition-delay:0.25s">
     <div class="track-number">06</div>
+    <img src="img/covers-did-it-matta.jpeg" alt="Did It Matta cover" class="track-cover">
     <div class="track-details">
       <h3>Did It Matta</h3>
       <p class="track-meta">Single · 2024</p>
@@ -414,6 +426,7 @@ footer {
 
   <div class="track-item reveal" style="transition-delay:0.3s">
     <div class="track-number">07</div>
+    <img src="img/covers-until-ive-earnt-it.jpeg" alt="Until I've Earnt It cover" class="track-cover">
     <div class="track-details">
       <h3>Until I've Earnt It</h3>
       <p class="track-meta">Single · 2024</p>
@@ -427,6 +440,7 @@ footer {
 
   <div class="track-item reveal" style="transition-delay:0.35s">
     <div class="track-number">08</div>
+    <img src="img/covers-monkeys-zombies.jpeg" alt="Monkeys & Zombies cover" class="track-cover">
     <div class="track-details">
       <h3>Monkeys & Zombies</h3>
       <p class="track-meta">Single · 2024</p>

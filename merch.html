@@ -122,9 +122,11 @@ nav {
   margin-bottom: 30px;
 }
 .notify-form {
-  display: flex;
   max-width: 450px;
   margin: 0 auto;
+}
+.notify-form form {
+  display: flex;
   gap: 0;
 }
 .notify-form input {
@@ -255,6 +257,19 @@ nav {
 .marquee-track span .dot { color: var(--rose-gold); margin: 0 15px; }
 @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
+/* Socials */
+.footer-socials {
+  display: flex; justify-content: center; gap: 20px;
+  flex-wrap: wrap; margin-bottom: 25px;
+}
+.footer-socials a {
+  font-family: var(--font-body); font-size: 0.7rem;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--rose-gold); text-decoration: none;
+  transition: color 0.3s; opacity: 0.7;
+}
+.footer-socials a:hover { opacity: 1; color: var(--white); }
+
 /* Footer */
 footer {
   border-top: 1px solid rgba(255,255,255,0.06);
@@ -284,7 +299,7 @@ footer {
 }
 @media (max-width: 550px) {
   .merch-grid, .merch-grid.four { grid-template-columns: 1fr; }
-  .notify-form { flex-direction: column; }
+  .notify-form form { flex-direction: column; }
   .notify-form input { border-right: 1px solid rgba(255,255,255,0.1); }
 }
 </style>
@@ -324,8 +339,13 @@ footer {
   <h2 class="reveal">First Drop — Coming Soon</h2>
   <p class="reveal" style="transition-delay:0.05s">Be the first to know when the collection drops. Enter your email for priority access.</p>
   <div class="notify-form reveal" style="transition-delay:0.1s">
-    <input type="email" placeholder="your@email.com" aria-label="Email for notifications">
-    <button type="button">Notify Me</button>
+    <form id="notifyForm" action="https://formspree.io/f/xpqyekqk" method="POST">
+      <input type="email" name="email" placeholder="your@email.com" aria-label="Email for notifications" required>
+      <input type="hidden" name="_subject" value="QuaZarR Merch Drop - New Subscriber">
+      <button type="submit">Notify Me</button>
+    </form>
+    <p id="formSuccess" style="display:none; color:var(--rose-gold); font-size:0.8rem; letter-spacing:2px; margin-top:15px;">You're on the list. We'll hit you up when it drops.</p>
+    <p id="formError" style="display:none; color:#ff6b6b; font-size:0.8rem; letter-spacing:2px; margin-top:15px;">Something went wrong. Try again or email rowanrrmoney@gmail.com</p>
   </div>
 </div>
 
@@ -444,6 +464,15 @@ footer {
 
 <footer>
   <div class="footer-wordmark">QuaZarR</div>
+  <div class="footer-socials">
+    <a href="https://instagram.com/quazarrrrr" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://tiktok.com/@quazarr33" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://x.com/QQuaZZarRR" target="_blank" rel="noopener">X</a>
+    <a href="https://snapchat.com/add/rowanmoney" target="_blank" rel="noopener">Snapchat</a>
+    <a href="https://open.spotify.com/artist/3YioO9lmJBKPTVfXr0hfS1" target="_blank" rel="noopener">Spotify</a>
+    <a href="https://music.apple.com/gb/artist/quazarr/1743395660" target="_blank" rel="noopener">Apple Music</a>
+    <a href="https://youtube.com/@qzrrrrr" target="_blank" rel="noopener">YouTube</a>
+  </div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="music.html">Music</a>
@@ -476,6 +505,38 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 reveals.forEach(el => observer.observe(el));
+
+// Notify form submission
+const notifyForm = document.getElementById('notifyForm');
+const formSuccess = document.getElementById('formSuccess');
+const formError = document.getElementById('formError');
+if (notifyForm) {
+  notifyForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = notifyForm.querySelector('button');
+    btn.textContent = '...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(notifyForm.action, {
+        method: 'POST',
+        body: new FormData(notifyForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        notifyForm.style.display = 'none';
+        formSuccess.style.display = 'block';
+      } else {
+        formError.style.display = 'block';
+        btn.textContent = 'Notify Me';
+        btn.disabled = false;
+      }
+    } catch (err) {
+      formError.style.display = 'block';
+      btn.textContent = 'Notify Me';
+      btn.disabled = false;
+    }
+  });
+}
 </script>
 </body>
 </html>

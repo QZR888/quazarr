@@ -270,6 +270,32 @@ nav {
   transition: border-color 0.3s;
 }
 .contact-email:hover { border-color: var(--rose-gold); }
+.contact-socials {
+  display: flex; justify-content: center; gap: 25px;
+  flex-wrap: wrap; margin-top: 30px;
+}
+.contact-socials a {
+  font-family: var(--font-body); font-size: 0.75rem;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--rose-gold); text-decoration: none;
+  transition: color 0.3s; opacity: 0.7;
+  padding: 8px 16px;
+  border: 1px solid rgba(201,169,110,0.2);
+}
+.contact-socials a:hover { opacity: 1; color: var(--white); border-color: var(--white); }
+
+/* Socials */
+.footer-socials {
+  display: flex; justify-content: center; gap: 20px;
+  flex-wrap: wrap; margin-bottom: 25px;
+}
+.footer-socials a {
+  font-family: var(--font-body); font-size: 0.7rem;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--rose-gold); text-decoration: none;
+  transition: color 0.3s; opacity: 0.7;
+}
+.footer-socials a:hover { opacity: 1; color: var(--white); }
 
 /* Footer */
 footer {
@@ -392,6 +418,10 @@ footer {
       <p class="sidebar-label">Platforms</p>
       <p class="sidebar-value">Spotify<br>Apple Music<br>YouTube</p>
     </div>
+    <div class="sidebar-section reveal" style="transition-delay:0.3s">
+      <p class="sidebar-label">Socials</p>
+      <p class="sidebar-value"><a href="https://instagram.com/quazarrrrr" target="_blank" rel="noopener" style="color:var(--rose-gold);text-decoration:none;">Instagram</a><br><a href="https://tiktok.com/@quazarr33" target="_blank" rel="noopener" style="color:var(--rose-gold);text-decoration:none;">TikTok</a><br><a href="https://x.com/QQuaZZarRR" target="_blank" rel="noopener" style="color:var(--rose-gold);text-decoration:none;">X</a><br><a href="https://snapchat.com/add/rowanmoney" target="_blank" rel="noopener" style="color:var(--rose-gold);text-decoration:none;">Snapchat</a></p>
+    </div>
   </aside>
 
   <!-- Main Body -->
@@ -436,10 +466,25 @@ footer {
   <h2 class="reveal" style="transition-delay:0.05s">Contact</h2>
   <p class="reveal" style="transition-delay:0.1s">For bookings, collaborations, press enquiries, or business — reach out directly.</p>
   <a href="mailto:rowanrrmoney@gmail.com" class="contact-email reveal" style="transition-delay:0.15s">rowanrrmoney@gmail.com</a>
+  <div class="contact-socials reveal" style="transition-delay:0.2s">
+    <a href="https://instagram.com/quazarrrrr" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://tiktok.com/@quazarr33" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://x.com/QQuaZZarRR" target="_blank" rel="noopener">X</a>
+    <a href="https://snapchat.com/add/rowanmoney" target="_blank" rel="noopener">Snapchat</a>
+  </div>
 </section>
 
 <footer>
   <div class="footer-wordmark">QuaZarR</div>
+  <div class="footer-socials">
+    <a href="https://instagram.com/quazarrrrr" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://tiktok.com/@quazarr33" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://x.com/QQuaZZarRR" target="_blank" rel="noopener">X</a>
+    <a href="https://snapchat.com/add/rowanmoney" target="_blank" rel="noopener">Snapchat</a>
+    <a href="https://open.spotify.com/artist/3YioO9lmJBKPTVfXr0hfS1" target="_blank" rel="noopener">Spotify</a>
+    <a href="https://music.apple.com/gb/artist/quazarr/1743395660" target="_blank" rel="noopener">Apple Music</a>
+    <a href="https://youtube.com/@qzrrrrr" target="_blank" rel="noopener">YouTube</a>
+  </div>
   <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="music.html">Music</a>

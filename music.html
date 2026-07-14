@@ -5,291 +5,291 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Music · QuaZarR</title>
 <meta name="description" content="Stream QuaZarR's full discography. All tracks available on Spotify, Apple Music, and YouTube.">
-      <meta name="keywords" content="QuaZarR music, Mr Money songs, UK rap tracks, Coming For Yaaa, Skets Could Never, Muffin and Mimosa, Into The Distance">
-      <link rel="canonical" href="https://quazarr.online/music.html">
-      <meta property="og:type" content="music.musician">
-      <meta property="og:url" content="https://quazarr.online/music.html">
-      <meta property="og:title" content="Music · QuaZarR — Stream the Full Discography">
-      <meta property="og:description" content="Every track. Every frequency. Stream QuaZarR on Spotify, Apple Music, and YouTube.">
-      <meta property="og:image" content="https://quazarr.online/img/og-image.jpg">
-      <meta property="og:image:width" content="1200">
-      <meta property="og:image:height" content="630">
-      <meta property="og:site_name" content="QuaZarR">
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:title" content="Music · QuaZarR — Stream the Full Discography">
-      <meta name="twitter:description" content="Every track. Every frequency. Stream QuaZarR on Spotify, Apple Music, and YouTube.">
-      <meta name="twitter:image" content="https://quazarr.online/img/og-image.jpg">
+<meta name="keywords" content="QuaZarR music, Mr Money songs, UK rap tracks, Seaside GOAT, Queen of the Dead, Coming For Yaaa, Skets Could Never">
+<link rel="canonical" href="https://quazarr.online/music.html">
+<meta property="og:type" content="music.musician">
+<meta property="og:url" content="https://quazarr.online/music.html">
+<meta property="og:title" content="Music · QuaZarR — Stream the Full Discography">
+<meta property="og:description" content="Every track. Every frequency. Stream QuaZarR on Spotify, Apple Music, and YouTube.">
+<meta property="og:image" content="https://quazarr.online/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="QuaZarR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Music · QuaZarR — Stream the Full Discography">
+<meta name="twitter:description" content="Every track. Every frequency. Stream QuaZarR on Spotify, Apple Music, and YouTube.">
+<meta name="twitter:image" content="https://quazarr.online/img/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Italiana&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
-  --black: #0A0A0A;
-  --white: #F5F5F0;
-  --rose-gold: #C9A96E;
-  --grey: #888;
-  --grey-dark: #1A1A1A;
-  --grey-mid: #2A2A2A;
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-serif: 'Cormorant Garamond', serif;
-  --font-body: 'DM Sans', sans-serif;
+--black: #0A0A0A;
+--white: #F5F5F0;
+--rose-gold: #C9A96E;
+--grey: #888;
+--grey-dark: #1A1A1A;
+--grey-mid: #2A2A2A;
+--font-display: 'Bebas Neue', sans-serif;
+--font-serif: 'Cormorant Garamond', serif;
+--font-body: 'DM Sans', sans-serif;
 }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--font-body);
-  cursor: none;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+background: var(--black);
+color: var(--white);
+font-family: var(--font-body);
+cursor: none;
+overflow-x: hidden;
+-webkit-font-smoothing: antialiased;
 }
 .cursor {
-  width: 20px; height: 20px;
-  border: 2px solid var(--white);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 99999;
-  mix-blend-mode: difference;
-  transition: transform 0.15s ease, width 0.2s, height 0.2s;
-  transform: translate(-50%, -50%);
+width: 20px; height: 20px;
+border: 2px solid var(--white);
+border-radius: 50%;
+position: fixed;
+pointer-events: none;
+z-index: 99999;
+mix-blend-mode: difference;
+transition: transform 0.15s ease, width 0.2s, height 0.2s;
+transform: translate(-50%, -50%);
 }
 .cursor.hover { width: 50px; height: 50px; background: var(--white); opacity: 0.3; }
 .reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+opacity: 0;
+transform: translateY(40px);
+transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* Nav */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  padding: 20px 40px;
-  display: flex; justify-content: space-between; align-items: center;
-  background: rgba(10,10,10,0.85);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+padding: 20px 40px;
+display: flex; justify-content: space-between; align-items: center;
+background: rgba(10,10,10,0.85);
+backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .nav-logo {
-  font-family: var(--font-body); font-weight: 700; font-size: 1.8rem;
-  letter-spacing: 3px; color: var(--white); text-decoration: none;
+font-family: 'Italiana', serif; font-weight: 700; font-size: 1.8rem;
+letter-spacing: 3px; color: var(--white); text-decoration: none;
 }
 .nav-logo span.accent { color: var(--rose-gold); }
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-links a {
-  font-family: var(--font-body); font-size: 0.8rem; font-weight: 500;
-  letter-spacing: 2px; text-transform: uppercase; color: var(--grey);
-  text-decoration: none; transition: color 0.3s; position: relative;
+font-family: var(--font-body); font-size: 0.8rem; font-weight: 500;
+letter-spacing: 2px; text-transform: uppercase; color: var(--grey);
+text-decoration: none; transition: color 0.3s; position: relative;
 }
 .nav-links a::after {
-  content: ''; position: absolute; bottom: -4px; left: 0;
-  width: 0; height: 1px; background: var(--rose-gold); transition: width 0.3s;
+content: ''; position: absolute; bottom: -4px; left: 0;
+width: 0; height: 1px; background: var(--rose-gold); transition: width 0.3s;
 }
 .nav-links a:hover { color: var(--white); }
 .nav-links a:hover::after { width: 100%; }
 .nav-links a.active { color: var(--rose-gold); }
 .nav-links a.active::after { width: 100%; }
 .menu-toggle {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: none; padding: 5px;
+display: none; flex-direction: column; gap: 5px;
+background: none; border: none; cursor: none; padding: 5px;
 }
 .menu-toggle span { width: 24px; height: 1.5px; background: var(--white); transition: all 0.3s; }
 .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .menu-toggle.active span:nth-child(2) { opacity: 0; }
 .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 .mobile-menu {
-  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: var(--black); z-index: 999;
-  flex-direction: column; justify-content: center; align-items: center; gap: 30px;
+display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+background: var(--black); z-index: 999;
+flex-direction: column; justify-content: center; align-items: center; gap: 30px;
 }
 .mobile-menu.active { display: flex; }
 .mobile-menu a {
-  font-family: var(--font-display); font-size: 3rem; color: var(--white);
-  text-decoration: none; letter-spacing: 4px; transition: color 0.3s;
+font-family: var(--font-display); font-size: 3rem; color: var(--white);
+text-decoration: none; letter-spacing: 4px; transition: color 0.3s;
 }
 .mobile-menu a:hover { color: var(--rose-gold); }
 
 /* Page Hero */
 .page-hero {
-  padding: 160px 40px 80px;
-  text-align: center;
-  position: relative;
+padding: 160px 40px 80px;
+text-align: center;
+position: relative;
 }
 .page-hero::after {
-  content: '';
-  position: absolute; bottom: 0; left: 10%; right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201,169,110,0.3), transparent);
+content: '';
+position: absolute; bottom: 0; left: 10%; right: 10%;
+height: 1px;
+background: linear-gradient(90deg, transparent, rgba(201,169,110,0.3), transparent);
 }
 .page-hero .eyebrow {
-  font-family: var(--font-body); font-size: 0.7rem;
-  letter-spacing: 5px;
-  color: var(--rose-gold); margin-bottom: 20px;
+font-family: var(--font-body); font-size: 0.7rem;
+letter-spacing: 5px;
+color: var(--rose-gold); margin-bottom: 20px;
 }
 .page-hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 8vw, 6rem);
-  letter-spacing: 6px;
+font-family: var(--font-display);
+font-size: clamp(3rem, 8vw, 6rem);
+letter-spacing: 6px;
 }
 .page-hero .hero-sub {
-  font-family: var(--font-serif); font-size: 1.1rem;
-  font-weight: 300; color: var(--grey);
-  margin-top: 20px; font-style: italic;
+font-family: var(--font-serif); font-size: 1.1rem;
+font-weight: 300; color: var(--grey);
+margin-top: 20px; font-style: italic;
 }
 
 /* Marquee */
 .marquee-wrap {
-  overflow: hidden; padding: 25px 0;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  background: var(--grey-dark);
+overflow: hidden; padding: 25px 0;
+border-top: 1px solid rgba(255,255,255,0.06);
+border-bottom: 1px solid rgba(255,255,255,0.06);
+background: var(--grey-dark);
 }
 .marquee-track {
-  display: flex; width: max-content;
-  animation: marquee 30s linear infinite;
+display: flex; width: max-content;
+animation: marquee 30s linear infinite;
 }
 .marquee-track span {
-  font-family: var(--font-display); font-size: 0.9rem;
-  letter-spacing: 4px; text-transform: uppercase;
-  color: var(--grey); white-space: nowrap; padding: 0 30px;
+font-family: var(--font-display); font-size: 0.9rem;
+letter-spacing: 4px; text-transform: uppercase;
+color: var(--grey); white-space: nowrap; padding: 0 30px;
 }
 .marquee-track span .dot { color: var(--rose-gold); margin: 0 15px; }
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+0% { transform: translateX(0); }
+100% { transform: translateX(-50%); }
 }
 
 /* Tracklist */
 .tracklist {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 80px 40px;
+max-width: 1000px;
+margin: 0 auto;
+padding: 80px 40px;
 }
 .track-item {
-  display: grid;
-  grid-template-columns: 60px 60px 1fr auto;
-  align-items: center;
-  gap: 20px;
-  padding: 25px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  transition: all 0.3s;
+display: grid;
+grid-template-columns: 60px 60px 1fr auto;
+align-items: center;
+gap: 20px;
+padding: 25px 0;
+border-bottom: 1px solid rgba(255,255,255,0.06);
+transition: all 0.3s;
 }
 .track-item:first-child {
-  border-top: 1px solid rgba(255,255,255,0.06);
+border-top: 1px solid rgba(255,255,255,0.06);
 }
 .track-item:hover {
-  padding-left: 15px;
-  border-bottom-color: rgba(201,169,110,0.2);
+padding-left: 15px;
+border-bottom-color: rgba(201,169,110,0.2);
 }
 .track-item:hover .track-number { color: var(--rose-gold); }
 .track-cover {
-  width: 60px; height: 60px;
-  object-fit: cover;
-  border: 1px solid rgba(255,255,255,0.06);
+width: 60px; height: 60px;
+object-fit: cover;
+border: 1px solid rgba(255,255,255,0.06);
 }
 .track-number {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  color: rgba(255,255,255,0.15);
-  transition: color 0.3s;
-  text-align: center;
+font-family: var(--font-display);
+font-size: 2rem;
+color: rgba(255,255,255,0.15);
+transition: color 0.3s;
+text-align: center;
 }
 .track-details h3 {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  letter-spacing: 2px;
-  margin-bottom: 5px;
+font-family: var(--font-display);
+font-size: 1.6rem;
+letter-spacing: 2px;
+margin-bottom: 5px;
 }
 .track-details .track-meta {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  color: var(--grey);
-  letter-spacing: 2px;
-  text-transform: uppercase;
+font-family: var(--font-body);
+font-size: 0.7rem;
+color: var(--grey);
+letter-spacing: 2px;
+text-transform: uppercase;
 }
 .track-details .track-meta.latest {
-  color: var(--rose-gold);
+color: var(--rose-gold);
 }
 .track-streams {
-  display: flex;
-  gap: 10px;
+display: flex;
+gap: 10px;
 }
 .stream-btn {
-  font-family: var(--font-body);
-  font-size: 0.65rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 8px 16px;
-  border: 1px solid rgba(255,255,255,0.12);
-  color: var(--white);
-  text-decoration: none;
-  transition: all 0.3s;
-  cursor: none;
-  white-space: nowrap;
+font-family: var(--font-body);
+font-size: 0.65rem;
+letter-spacing: 2px;
+text-transform: uppercase;
+padding: 8px 16px;
+border: 1px solid rgba(255,255,255,0.12);
+color: var(--white);
+text-decoration: none;
+transition: all 0.3s;
+cursor: none;
+white-space: nowrap;
 }
 .stream-btn:hover { border-color: var(--rose-gold); color: var(--rose-gold); }
 
 /* Socials */
 .footer-socials {
-  display: flex; justify-content: center; gap: 20px;
-  flex-wrap: wrap; margin-bottom: 25px;
+display: flex; justify-content: center; gap: 20px;
+flex-wrap: wrap; margin-bottom: 25px;
 }
 .footer-socials a {
-  font-family: var(--font-body); font-size: 0.7rem;
-  letter-spacing: 2px; text-transform: uppercase;
-  color: var(--rose-gold); text-decoration: none;
-  transition: color 0.3s; opacity: 0.7;
+font-family: var(--font-body); font-size: 0.7rem;
+letter-spacing: 2px; text-transform: uppercase;
+color: var(--rose-gold); text-decoration: none;
+transition: color 0.3s; opacity: 0.7;
 }
 .footer-socials a:hover { opacity: 1; color: var(--white); }
 
 /* Footer */
 footer {
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding: 80px 40px; text-align: center;
+border-top: 1px solid rgba(255,255,255,0.06);
+padding: 80px 40px; text-align: center;
 }
 .footer-wordmark {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: clamp(3rem, 8vw, 6rem);
-  letter-spacing: 8px; color: var(--white);
-  margin-bottom: 30px; opacity: 0.15;
+font-family: var(--font-body);
+font-weight: 700;
+font-size: clamp(3rem, 8vw, 6rem);
+letter-spacing: 8px; color: var(--white);
+margin-bottom: 30px; opacity: 0.15;
 }
 .footer-links {
-  display: flex; justify-content: center; gap: 30px;
-  flex-wrap: wrap; margin-bottom: 20px;
+display: flex; justify-content: center; gap: 30px;
+flex-wrap: wrap; margin-bottom: 20px;
 }
 .footer-links a {
-  font-family: var(--font-body); font-size: 0.75rem;
-  letter-spacing: 2px; color: var(--grey); text-decoration: none;
-  transition: color 0.3s;
+font-family: var(--font-body); font-size: 0.75rem;
+letter-spacing: 2px; color: var(--grey); text-decoration: none;
+transition: color 0.3s;
 }
 .footer-links a:hover { color: var(--rose-gold); }
 .footer-copy {
-  font-family: var(--font-body); font-size: 0.7rem;
-  letter-spacing: 2px; color: rgba(255,255,255,0.2); margin-top: 20px;
+font-family: var(--font-body); font-size: 0.7rem;
+letter-spacing: 2px; color: rgba(255,255,255,0.2); margin-top: 20px;
 }
 
 @media (max-width: 900px) {
-  nav { padding: 15px 20px; }
-  .nav-links { display: none; }
-  .menu-toggle { display: flex; }
-  .tracklist { padding: 60px 20px; }
-  .page-hero { padding: 140px 20px 60px; }
+nav { padding: 15px 20px; }
+.nav-links { display: none; }
+.menu-toggle { display: flex; }
+.tracklist { padding: 60px 20px; }
+.page-hero { padding: 140px 20px 60px; }
 }
 @media (max-width: 650px) {
-  .track-item {
-    grid-template-columns: 50px 50px 1fr;
-    gap: 12px;
-  }
-  .track-cover { width: 50px; height: 50px; }
-  .track-streams {
-    grid-column: 1 / -1;
-    margin-top: 5px;
-  }
-  .track-number { font-size: 1.2rem; }
-  .track-details h3 { font-size: 1.1rem; }
+.track-item {
+grid-template-columns: 50px 50px 1fr;
+gap: 12px;
+}
+.track-cover { width: 50px; height: 50px; }
+.track-streams {
+grid-column: 1 / -1;
+margin-top: 5px;
+}
+.track-number { font-size: 1.2rem; }
+.track-details h3 { font-size: 1.1rem; }
 }
 </style>
 </head>
@@ -298,217 +298,265 @@ footer {
 <div class="cursor" id="cursor"></div>
 
 <nav>
-  <a href="index.html" class="nav-logo">Qua<span class="accent">Z</span>arR</a>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="music.html" class="active">Music</a>
-    <a href="merch.html">Merch</a>
-    <a href="about.html">About</a>
-  </div>
-  <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+<a href="index.html" class="nav-logo">Qua<span class="accent">Z</span>arR</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="music.html" class="active">Music</a>
+<a href="merch.html">Merch</a>
+<a href="about.html">About</a>
+</div>
+<button class="menu-toggle" id="menuToggle" aria-label="Menu">
+<span></span><span></span><span></span>
+</button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="music.html">Music</a>
-  <a href="merch.html">Merch</a>
-  <a href="about.html">About</a>
+<a href="index.html">Home</a>
+<a href="music.html">Music</a>
+<a href="merch.html">Merch</a>
+<a href="about.html">About</a>
 </div>
 
 <section class="page-hero">
-  <p class="eyebrow reveal">Discography</p>
-  <h1 class="reveal" style="transition-delay:0.1s">Music</h1>
-  <p class="hero-sub reveal" style="transition-delay:0.15s">Every track. Every frequency. Stream everywhere.</p>
+<p class="eyebrow reveal">Discography</p>
+<h1 class="reveal" style="transition-delay:0.1s">Music</h1>
+<p class="hero-sub reveal" style="transition-delay:0.15s">Every track. Every frequency. Stream everywhere.</p>
 </section>
 
 <div class="marquee-wrap">
-  <div class="marquee-track">
-    <span>Coming For Yaaa <span class="dot">◆</span></span>
-    <span>Skets Could Never <span class="dot">◆</span></span>
-    <span>Muffin & Mimosa <span class="dot">◆</span></span>
-    <span>Into The Distance <span class="dot">◆</span></span>
-    <span>Radar <span class="dot">◆</span></span>
-    <span>Did It Matta <span class="dot">◆</span></span>
-    <span>Until I've Earnt It <span class="dot">◆</span></span>
-    <span>Monkeys & Zombies <span class="dot">◆</span></span>
-    <span>Coming For Yaaa <span class="dot">◆</span></span>
-    <span>Skets Could Never <span class="dot">◆</span></span>
-    <span>Muffin & Mimosa <span class="dot">◆</span></span>
-    <span>Into The Distance <span class="dot">◆</span></span>
-    <span>Radar <span class="dot">◆</span></span>
-    <span>Did It Matta <span class="dot">◆</span></span>
-    <span>Until I've Earnt It <span class="dot">◆</span></span>
-    <span>Monkeys & Zombies <span class="dot">◆</span></span>
-  </div>
+<div class="marquee-track">
+<span>Seaside GOAT <span class="dot">◆</span></span>
+<span>& <span class="dot">◆</span></span>
+<span>Queen Of The Dead <span class="dot">◆</span></span>
+<span>Coming For Yaaa <span class="dot">◆</span></span>
+<span>Skets Could Never <span class="dot">◆</span></span>
+<span>Muffin & Mimosa <span class="dot">◆</span></span>
+<span>Into The Distance <span class="dot">◆</span></span>
+<span>Radar <span class="dot">◆</span></span>
+<span>Did It Matta <span class="dot">◆</span></span>
+<span>Until I've Earnt It <span class="dot">◆</span></span>
+<span>Zombies & Monkeys <span class="dot">◆</span></span>
+<span>Seaside GOAT <span class="dot">◆</span></span>
+<span>& <span class="dot">◆</span></span>
+<span>Queen Of The Dead <span class="dot">◆</span></span>
+<span>Coming For Yaaa <span class="dot">◆</span></span>
+<span>Skets Could Never <span class="dot">◆</span></span>
+<span>Muffin & Mimosa <span class="dot">◆</span></span>
+<span>Into The Distance <span class="dot">◆</span></span>
+<span>Radar <span class="dot">◆</span></span>
+<span>Did It Matta <span class="dot">◆</span></span>
+<span>Until I've Earnt It <span class="dot">◆</span></span>
+<span>Zombies & Monkeys <span class="dot">◆</span></span>
+</div>
 </div>
 
 <!-- Spotify Embed -->
 <div style="max-width:1000px; margin:0 auto; padding:60px 40px 0;">
-  <p style="font-family:var(--font-body); font-size:0.7rem; letter-spacing:5px; color:var(--rose-gold); margin-bottom:20px;" class="reveal">Stream on Spotify</p>
-  <div class="reveal" style="transition-delay:0.05s; border-radius:12px; overflow:hidden;">
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/3YioO9lmJBKPTVfXr0hfS1?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </div>
+<p style="font-family:var(--font-body); font-size:0.7rem; letter-spacing:5px; color:var(--rose-gold); margin-bottom:20px;" class="reveal">Stream on Spotify</p>
+<div class="reveal" style="transition-delay:0.05s; border-radius:12px; overflow:hidden;">
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/3YioO9lmJBKPTVfXr0hfS1?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
 </div>
 
 <div class="tracklist">
 
-  <div class="track-item reveal">
-    <div class="track-number">01</div>
-    <img src="img/covers-coming-for-yaaa.jpeg" alt="Coming For Yaaa cover" class="track-cover">
-    <div class="track-details">
-      <h3>Coming For Yaaa</h3>
-      <p class="track-meta latest">Latest Release · 2025</p>
-    </div>
-    <div class="track-streams">
-      <a href="https://open.spotify.com/album/3oyQ3sn012qcJAgSUE3Nqt" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
-      <a href="https://music.apple.com/gb/album/coming-for-yaaa-single/1861055784" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
-      <a href="https://youtu.be/uEEBC2EFrOI" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
-    </div>
-  </div>
+<div class="track-item reveal">
+<div class="track-number">01</div>
+<img src="img/seaside-goat.jpg" alt="Seaside GOAT cover" class="track-cover">
+<div class="track-details">
+<h3>Seaside GOAT</h3>
+<p class="track-meta latest">Latest Release · 2026</p>
+</div>
+<div class="track-streams">
+<a href="https://open.spotify.com/track/0IGI2r59paVQLy0Vv9w1EO" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
+<a href="https://music.apple.com/gb/album/seaside-goat/6779799835?i=6779799836" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
+<a href="https://youtu.be/K6TGcYihcbk" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
+</div>
+</div>
 
-  <div class="track-item reveal" style="transition-delay:0.05s">
-    <div class="track-number">02</div>
-    <img src="img/covers-skets-could-never.jpeg" alt="Skets Could Never cover" class="track-cover">
-    <div class="track-details">
-      <h3>Skets Could Never</h3>
-      <p class="track-meta">Single · 2025</p>
-    </div>
-    <div class="track-streams">
-      <a href="https://open.spotify.com/album/52i2PpS4ofzJKsWO4o96Ji" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
-      <a href="https://music.apple.com/gb/album/skets-could-never-single/1834590965" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
-      <a href="https://youtu.be/h-mH6vt_HQc" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
-    </div>
-  </div>
+<div class="track-item reveal" style="transition-delay:0.05s">
+<div class="track-number">02</div>
+<img src="img/and-cover.jpg" alt="& cover" class="track-cover">
+<div class="track-details">
+<h3>&amp;</h3>
+<p class="track-meta">Single · 2026</p>
+</div>
+<div class="track-streams">
+<a href="https://open.spotify.com/track/7lpgyB5ljWsi0oM6queZ7C" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
+<a href="https://music.apple.com/gb/album/1893790825?i=1893790826" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
+<a href="https://youtu.be/EcWR1RKP07o" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
+</div>
+</div>
 
-  <div class="track-item reveal" style="transition-delay:0.1s">
-    <div class="track-number">03</div>
-    <img src="img/covers-muffin-mimosa.jpeg" alt="Muffin & Mimosa cover" class="track-cover">
-    <div class="track-details">
-      <h3>Muffin & Mimosa</h3>
-      <p class="track-meta">Single · 2025</p>
-    </div>
-    <div class="track-streams">
-      <a href="https://open.spotify.com/album/5BgylI46kClIKrDMrdnG9a" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
-      <a href="https://music.apple.com/gb/album/muffin-mimosa-single/1806842952" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
-      <a href="https://youtu.be/xHW-u9mxKzQ" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
-    </div>
-  </div>
+<div class="track-item reveal" style="transition-delay:0.1s">
+<div class="track-number">03</div>
+<img src="img/queen-of-the-dead.jpg" alt="Queen of the Dead cover" class="track-cover">
+<div class="track-details">
+<h3>Queen Of The Dead</h3>
+<p class="track-meta">Single · 2026</p>
+</div>
+<div class="track-streams">
+<a href="https://open.spotify.com/track/7zOeqVNa5afOsWgU9et4IH" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
+<a href="https://music.apple.com/gb/album/queen-of-the-dead/1893790825?i=1893790827" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
+<a href="https://youtu.be/Rp3BnttZJGk" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
+</div>
+</div>
 
-  <div class="track-item reveal" style="transition-delay:0.15s">
-    <div class="track-number">04</div>
-    <img src="img/covers-into-the-distance.jpeg" alt="Into The Distance cover" class="track-cover">
-    <div class="track-details">
-      <h3>Into The Distance</h3>
-      <p class="track-meta">Single · 2025</p>
-    </div>
-    <div class="track-streams">
-      <a href="https://open.spotify.com/album/5gYrjIyJuZenR2NChkeJpg" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
-      <a href="https://music.apple.com/gb/album/into-the-distance-single/1802223633" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
-      <a href="https://youtu.be/dvGD8Bv9NnI" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
-    </div>
-  </div>
+<div class="track-item reveal" style="transition-delay:0.15s">
+<div class="track-number">04</div>
+<img src="img/covers-coming-for-yaaa.jpeg" alt="Coming For Yaaa cover" class="track-cover">
+<div class="track-details">
+<h3>Coming For Yaaa</h3>
+<p class="track-meta">Single · 2025</p>
+</div>
+<div class="track-streams">
+<a href="https://open.spotify.com/album/3oyQ3sn012qcJAgSUE3Nqt" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
+<a href="https://music.apple.com/gb/album/coming-for-yaaa-single/1861055784" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
+<a href="https://youtu.be/uEEBC2EFrOI" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
+</div>
+</div>
 
-  <div class="track-item reveal" style="transition-delay:0.2s">
-    <div class="track-number">05</div>
-    <img src="img/covers-radar.jpeg" alt="Radar cover" class="track-cover">
-    <div class="track-details">
-      <h3>Radar</h3>
-      <p class="track-meta">Single · 2024</p>
-    </div>
-    <div class="track-streams">
-      <a href="https://open.spotify.com/album/3lNuUKGiEUdyQgOUraFCAA" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
-      <a href="https://music.apple.com/gb/album/radar-single/1785563158" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
-      <a href="https://youtu.be/atCIiDO_kAE" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
-    </div>
-  </div>
+<div class="track-item reveal" style="transition-delay:0.2s">
+<div class="track-number">05</div>
+<img src="img/covers-skets-could-never.jpeg" alt="Skets Could Never cover" class="track-cover">
+<div class="track-details">
+<h3>Skets Could Never</h3>
+<p class="track-meta">Single · 2025</p>
+</div>
+<div class="track-streams">
+<a href="https://open.spotify.com/album/52i2PpS4ofzJKsWO4o96Ji" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
+<a href="https://music.apple.com/gb/album/skets-could-never-single/1834590965" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
+<a href="https://youtu.be/h-mH6vt_HQc" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
+</div>
+</div>
 
-  <div class="track-item reveal" style="transition-delay:0.25s">
-    <div class="track-number">06</div>
-    <img src="img/covers-did-it-matta.jpeg" alt="Did It Matta cover" class="track-cover">
-    <div class="track-details">
-      <h3>Did It Matta</h3>
-      <p class="track-meta">Single · 2024</p>
-    </div>
-    <div class="track-streams">
-      <a href="https://open.spotify.com/album/1Fx08supgrYWLstZwom7jG" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
-      <a href="https://music.apple.com/gb/album/did-it-matta-single/1774695845" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
-      <a href="https://youtu.be/_ZjtvgN_Q-w" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
-    </div>
-  </div>
+<div class="track-item reveal" style="transition-delay:0.25s">
+<div class="track-number">06</div>
+<img src="img/covers-muffin-mimosa.jpeg" alt="Muffin & Mimosa cover" class="track-cover">
+<div class="track-details">
+<h3>Muffin & Mimosa</h3>
+<p class="track-meta">Single · 2025</p>
+</div>
+<div class="track-streams">
+<a href="https://open.spotify.com/album/5BgylI46kClIKrDMrdnG9a" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
+<a href="https://music.apple.com/gb/album/muffin-mimosa-single/1806842952" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
+<a href="https://youtu.be/xHW-u9mxKzQ" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
+</div>
+</div>
 
-  <div class="track-item reveal" style="transition-delay:0.3s">
-    <div class="track-number">07</div>
-    <img src="img/covers-until-ive-earnt-it.jpeg" alt="Until I've Earnt It cover" class="track-cover">
-    <div class="track-details">
-      <h3>Until I've Earnt It</h3>
-      <p class="track-meta">Single · 2024</p>
-    </div>
-    <div class="track-streams">
-      <a href="https://open.spotify.com/album/7sMPZnJG4yPhWA0iD3uzDL" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
-      <a href="https://music.apple.com/gb/album/until-ive-earnt-it-single/1770098097" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
-      <a href="https://youtu.be/Wc29aUW5sxc" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
-    </div>
-  </div>
+<div class="track-item reveal" style="transition-delay:0.3s">
+<div class="track-number">07</div>
+<img src="img/covers-into-the-distance.jpeg" alt="Into The Distance cover" class="track-cover">
+<div class="track-details">
+<h3>Into The Distance</h3>
+<p class="track-meta">Single · 2025</p>
+</div>
+<div class="track-streams">
+<a href="https://open.spotify.com/album/5gYrjIyJuZenR2NChkeJpg" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
+<a href="https://music.apple.com/gb/album/into-the-distance-single/1802223633" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
+<a href="https://youtu.be/dvGD8Bv9NnI" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
+</div>
+</div>
 
-  <div class="track-item reveal" style="transition-delay:0.35s">
-    <div class="track-number">08</div>
-    <img src="img/covers-monkeys-zombies.jpeg" alt="Monkeys & Zombies cover" class="track-cover">
-    <div class="track-details">
-      <h3>Monkeys & Zombies</h3>
-      <p class="track-meta">Single · 2024</p>
-    </div>
-    <div class="track-streams">
-      <a href="https://open.spotify.com/album/1uFKJmQYb8gKpPeOnVkHcM" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
-      <a href="https://music.apple.com/gb/artist/quazarr/1743395660" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
-      <a href="https://youtu.be/pTJhOobLTyw" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
-    </div>
-  </div>
+<div class="track-item reveal" style="transition-delay:0.35s">
+<div class="track-number">08</div>
+<img src="img/covers-radar.jpeg" alt="Radar cover" class="track-cover">
+<div class="track-details">
+<h3>Radar</h3>
+<p class="track-meta">Single · 2024</p>
+</div>
+<div class="track-streams">
+<a href="https://open.spotify.com/album/3lNuUKGiEUdyQgOUraFCAA" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
+<a href="https://music.apple.com/gb/album/radar-single/1785563158" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
+<a href="https://youtu.be/atCIiDO_kAE" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
+</div>
+</div>
+
+<div class="track-item reveal" style="transition-delay:0.4s">
+<div class="track-number">09</div>
+<img src="img/covers-did-it-matta.jpeg" alt="Did It Matta cover" class="track-cover">
+<div class="track-details">
+<h3>Did It Matta</h3>
+<p class="track-meta">Single · 2024</p>
+</div>
+<div class="track-streams">
+<a href="https://open.spotify.com/album/1Fx08supgrYWLstZwom7jG" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
+<a href="https://music.apple.com/gb/album/did-it-matta-single/1774695845" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
+<a href="https://youtu.be/_ZjtvgN_Q-w" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
+</div>
+</div>
+
+<div class="track-item reveal" style="transition-delay:0.45s">
+<div class="track-number">10</div>
+<img src="img/covers-until-ive-earnt-it.jpeg" alt="Until I've Earnt It cover" class="track-cover">
+<div class="track-details">
+<h3>Until I've Earnt It</h3>
+<p class="track-meta">Single · 2024</p>
+</div>
+<div class="track-streams">
+<a href="https://open.spotify.com/album/7sMPZnJG4yPhWA0iD3uzDL" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
+<a href="https://music.apple.com/gb/album/until-ive-earnt-it-single/1770098097" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
+<a href="https://youtu.be/Wc29aUW5sxc" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
+</div>
+</div>
+
+<div class="track-item reveal" style="transition-delay:0.5s">
+<div class="track-number">11</div>
+<img src="img/zombies-and-monkeys.jpg" alt="Zombies & Monkeys cover" class="track-cover">
+<div class="track-details">
+<h3>Zombies & Monkeys</h3>
+<p class="track-meta">Single · 2024</p>
+</div>
+<div class="track-streams">
+<a href="https://open.spotify.com/album/1uFKJmQYb8gKpPeOnVkHcM" target="_blank" rel="noopener" class="stream-btn">Spotify</a>
+<a href="https://music.apple.com/gb/artist/quazarr/1743395660" target="_blank" rel="noopener" class="stream-btn">Apple Music</a>
+<a href="https://youtu.be/pTJhOobLTyw" target="_blank" rel="noopener" class="stream-btn">YouTube</a>
+</div>
+</div>
 
 </div>
 
 <footer>
-  <div class="footer-wordmark">QuaZarR</div>
-  <div class="footer-socials">
-    <a href="https://instagram.com/quazarrrrr" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://tiktok.com/@quazarr33" target="_blank" rel="noopener">TikTok</a>
-    <a href="https://x.com/QQuaZZarRR" target="_blank" rel="noopener">X</a>
-    <a href="https://snapchat.com/add/rowanmoney" target="_blank" rel="noopener">Snapchat</a>
-    <a href="https://open.spotify.com/artist/3YioO9lmJBKPTVfXr0hfS1" target="_blank" rel="noopener">Spotify</a>
-    <a href="https://music.apple.com/gb/artist/quazarr/1743395660" target="_blank" rel="noopener">Apple Music</a>
-    <a href="https://youtube.com/@qzrrrrr" target="_blank" rel="noopener">YouTube</a>
-  </div>
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="music.html">Music</a>
-    <a href="merch.html">Merch</a>
-    <a href="about.html">About</a>
-    <a href="mailto:rowanrrmoney@gmail.com">Contact</a>
-  </div>
-  <p class="footer-copy">quazarr.online · rowanrrmoney@gmail.com</p>
-  <p class="footer-copy">© 2026 QuaZarR · Mr Money</p>
+<div class="footer-wordmark">QuaZarR</div>
+<div class="footer-socials">
+<a href="https://instagram.com/quazarrrrr" target="_blank" rel="noopener">Instagram</a>
+<a href="https://tiktok.com/@quazarr33" target="_blank" rel="noopener">TikTok</a>
+<a href="https://x.com/QQuaZZarRR" target="_blank" rel="noopener">X</a>
+<a href="https://snapchat.com/add/rowanmoney" target="_blank" rel="noopener">Snapchat</a>
+<a href="https://open.spotify.com/artist/3YioO9lmJBKPTVfXr0hfS1" target="_blank" rel="noopener">Spotify</a>
+<a href="https://music.apple.com/gb/artist/quazarr/1743395660" target="_blank" rel="noopener">Apple Music</a>
+<a href="https://youtube.com/@qzrrrrr" target="_blank" rel="noopener">YouTube</a>
+</div>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="music.html">Music</a>
+<a href="merch.html">Merch</a>
+<a href="about.html">About</a>
+<a href="mailto:rowanrrmoney@gmail.com">Contact</a>
+</div>
+<p class="footer-copy">quazarr.online · rowanrrmoney@gmail.com</p>
+<p class="footer-copy">© 2026 QuaZarR · Mr Money</p>
 </footer>
 
 <script>
 const cursor = document.getElementById('cursor');
 document.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX + 'px';
-  cursor.style.top = e.clientY + 'px';
+cursor.style.left = e.clientX + 'px';
+cursor.style.top = e.clientY + 'px';
 });
 document.querySelectorAll('a, button, .track-item').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
 });
 const menuToggle = document.getElementById('menuToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 menuToggle.addEventListener('click', () => {
-  menuToggle.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
+menuToggle.classList.toggle('active');
+mobileMenu.classList.toggle('active');
 });
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 reveals.forEach(el => observer.observe(el));
 </script>
